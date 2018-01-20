@@ -1,0 +1,34 @@
+{
+  "name": "the-readers",
+  "version": "1.0.0",
+  "description": "Personal project for learning Nodejs, Express, MongoDB and Pug",
+  "main": "app.js",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "lint": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henryzarza/the-readers.git"
+  },
+  "author": "Henry Zarza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/henryzarza/the-readers/issues"
+  },
+  "homepage": "https://github.com/henryzarza/the-readers#readme",
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "morgan": "~1.9.0",
+    "node-sass-middleware": "0.9.8",
+    "pug": "2.0.0-beta11",
+    "serve-favicon": "~2.4.5"
+  },
+  "devDependencies": {
+    "standard": "^10.0.3"
+  }
+}
