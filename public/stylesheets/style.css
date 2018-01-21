@@ -1,8 +1,35 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+@import url("https://fonts.googleapis.com/css?family=Palanquin:200,400,600");
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
+*, *::after, *::before {
+  box-sizing: border-box; }
 
-a {
-  color: #00B7FF; }
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Palanquin", sans-serif;
+  font-size: 100%;
+  font-weight: 400;
+  background-color: #282E2C;
+  color: #DAEDD9; }
+
+.container__principal {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center; }
+  .container__principal .login {
+    width: 30rem;
+    border: 1pt solid red;
+    padding: 1rem 2rem; }
+
+.title {
+  font-family: "Kaushan Script", cursive;
+  margin: 0;
+  text-align: center;
+  color: #5DCB44;
+  text-shadow: 0.2rem 0.2rem 0.8rem #64cd4c; }
+  .title--big {
+    font-size: 4rem; }
 
 /*# sourceMappingURL=style.css.map */
