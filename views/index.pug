@@ -4,4 +4,23 @@ block content
   div.container__principal
     div.login
       h1.title.title--big= title
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente omnis similique nostrum? Earum quod quis, eaque sapiente velit soluta facere facilis maiores laboriosam quos, dolores eum magnam nostrum, omnis accusamus!
+      form(method='POST')(name='entryForm').login__content
+        - var typeContent = 1
+        case typeContent
+          when 1
+            label(for='username') Username:
+            input.form__element.form__element--primary(id='username', placeholder='Username or email', type='text', required)
+            label(for='password') Password:
+            input.form__element.form__element--primary(id='password', placeholder='•••••••••••••••', type='password', required)
+            button.btn.btn--primary.centered__block.mt-1 Let's Go
+            .login__buttons.mt-1
+              a.link.link--primary.change__content--login Sign in
+              a.link.link--primary.change__content--login Forgot password
+          when 2
+            label(for='fullName') Full Name:
+            input.form__element.form__element--primary(id='fullName', placeholder='John Doe', type='text', required)
+            button.btn.btn--primary.centered__block.mt-1 I'm Ready
+          when 3
+            label(for='email') Email:
+            input.form__element.form__element--primary(id='email', placeholder='example@email.com', type='email', required)
+            button.btn.btn--primary.centered__block.mt-1 I'm Ready

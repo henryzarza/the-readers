@@ -9,19 +9,80 @@ body {
   font-family: "Palanquin", sans-serif;
   font-size: 100%;
   font-weight: 400;
-  background-color: #282E2C;
-  color: #DAEDD9; }
+  background-color: #DAEDD9;
+  color: #191919; }
+
+label {
+  font-size: .85rem;
+  margin-left: .25rem; }
+
+.form__element {
+  border: 0.04rem solid #191919;
+  border-radius: 0.2rem;
+  display: block;
+  line-height: 1.5;
+  width: 100%;
+  color: #191919;
+  padding: .25rem .5rem;
+  font-size: 1rem;
+  margin-bottom: .2rem; }
+  .form__element:focus {
+    outline: none;
+    box-shadow: 0 0 0.5rem #1dc8a6; }
+  .form__element--primary {
+    border-color: #64cd4c; }
+    .form__element--primary:focus {
+      box-shadow: 0 0 0.5rem #67ce50; }
+
+.btn {
+  font-size: 1rem;
+  border-radius: 0.2rem;
+  background-color: transparent;
+  color: #191919;
+  border: 0.05rem solid #191919;
+  padding: .5rem .85rem;
+  cursor: pointer;
+  transition: .25s all; }
+  .btn:focus, .btn:hover, .btn:active {
+    outline: none; }
+  .btn--primary {
+    color: #5DCB44;
+    border: 0.05rem solid #5DCB44; }
+    .btn--primary:focus, .btn--primary:hover, .btn--primary:active {
+      background-color: #5DCB44;
+      color: #191919;
+      box-shadow: 0 0 2rem #67ce50; }
+
+.link {
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: inherit;
+  transition: .25s all; }
+  .link--primary {
+    color: #5DCB44; }
+    .link--primary:focus, .link--primary:hover, .link--primary:active {
+      text-decoration: underline;
+      font-weight: 600; }
 
 .container__principal {
   display: flex;
   height: 100vh;
-  width: 100vw;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  background-color: #282E2C;
+  color: #efefef; }
   .container__principal .login {
     width: 30rem;
-    border: 1pt solid red;
-    padding: 1rem 2rem; }
+    border: 0.05rem solid #64cd4c;
+    border-radius: 0.2rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 3rem #67ce50; }
+    .container__principal .login__content {
+      padding: 0 4rem; }
+    .container__principal .login__buttons {
+      display: flex;
+      justify-content: space-between; }
 
 .title {
   font-family: "Kaushan Script", cursive;
@@ -30,6 +91,19 @@ body {
   color: #5DCB44;
   text-shadow: 0.2rem 0.2rem 0.8rem #64cd4c; }
   .title--big {
-    font-size: 4rem; }
+    font-size: 4.3rem; }
+
+.centered__block {
+  display: block;
+  margin: auto; }
+
+.mt-1 {
+  margin-top: 1rem; }
+
+@media (max-width: 30rem) {
+  .login__content {
+    padding: 0 1rem !important; }
+  .title--big {
+    font-size: 3rem; } }
 
 /*# sourceMappingURL=style.css.map */
