@@ -25,7 +25,8 @@ label {
   color: #191919;
   padding: .25rem .5rem;
   font-size: 1rem;
-  margin-bottom: .2rem; }
+  margin-bottom: .2rem;
+  resize: none; }
   .form__element:focus {
     outline: none;
     box-shadow: 0 0 0.5rem #1dc8a6; }
@@ -67,7 +68,8 @@ label {
 
 .container__principal {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
+  max-height: 100%;
   align-items: center;
   justify-content: center;
   background-color: #282E2C;
@@ -77,6 +79,7 @@ label {
     border: 0.05rem solid #64cd4c;
     border-radius: 0.2rem;
     padding: 1rem 2rem;
+    margin: 1rem 0;
     box-shadow: 0 0 3rem #67ce50; }
     .container__principal .login__content {
       padding: 0 4rem; }
@@ -92,6 +95,23 @@ label {
   text-shadow: 0.2rem 0.2rem 0.8rem #64cd4c; }
   .title--big {
     font-size: 4.3rem; }
+  .title--error {
+    font-size: 10rem; }
+
+.input__file {
+  display: none; }
+  .input__file + label {
+    width: 8rem;
+    height: 8rem;
+    border: 0.05rem solid #64cd4c;
+    display: block;
+    margin: auto;
+    cursor: pointer;
+    font-size: 4rem;
+    text-align: center; }
+    .input__file + label:hover {
+      border-style: dashed;
+      border-color: #efefef; }
 
 .centered__block {
   display: block;
@@ -99,6 +119,15 @@ label {
 
 .mt-1 {
   margin-top: 1rem; }
+
+.mt-0 {
+  margin-top: 0; }
+
+.hide {
+  display: none; }
+
+.centered__text {
+  text-align: center; }
 
 @media (max-width: 30rem) {
   .login__content {

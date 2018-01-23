@@ -1,6 +1,9 @@
 extends layout
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  .container__principal#error-content
+    .centered__text
+      h1.title.title--error#title-error= error.status
+      h1.mt-0 Oops... #{message}
+      a.btn.btn--primary.mt-1 Return
+      //pre #{error.stack}

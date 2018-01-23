@@ -1,26 +1,42 @@
 extends layout
 
 block content
-  div.container__principal
-    div.login
+  .container__principal
+    .login
       h1.title.title--big= title
-      form(method='POST')(name='entryForm').login__content
-        - var typeContent = 1
-        case typeContent
-          when 1
-            label(for='username') Username:
-            input.form__element.form__element--primary(id='username', placeholder='Username or email', type='text', required)
-            label(for='password') Password:
-            input.form__element.form__element--primary(id='password', placeholder='•••••••••••••••', type='password', required)
-            button.btn.btn--primary.centered__block.mt-1 Let's Go
-            .login__buttons.mt-1
-              a.link.link--primary.change__content--login Sign in
-              a.link.link--primary.change__content--login Forgot password
-          when 2
-            label(for='fullName') Full Name:
-            input.form__element.form__element--primary(id='fullName', placeholder='John Doe', type='text', required)
-            button.btn.btn--primary.centered__block.mt-1 I'm Ready
-          when 3
-            label(for='email') Email:
-            input.form__element.form__element--primary(id='email', placeholder='example@email.com', type='email', required)
-            button.btn.btn--primary.centered__block.mt-1 I'm Ready
+      .login__content
+        //Login
+        form(method='POST', name='entryForm')
+          label(for='username') Username:
+          input.form__element.form__element--primary(id='username', placeholder='Username or email', type='text', required)
+          label(for='password') Password:
+          input.form__element.form__element--primary(id='password', placeholder='•••••••••••••••', type='password', required)
+          button.btn.btn--primary.centered__block.mt-1 Let's Go
+          .login__buttons.mt-1
+            a.link.link--primary.change__content--login Sign in
+            a.link.link--primary.change__content--login Forgot password
+        
+        //Remember password
+        form.hide(method='POST', name='resetForm')
+          label(for='resetEmail') Email:
+          input.form__element.form__element--primary(name='resetEmail', id='resetEmail', placeholder='example@email.com', type='email', required)
+          button.btn.btn--primary.centered__block.mt-1 I'm Ready
+
+        //Sign in
+        form.hide(method='POST', name='signForm')
+          input.input__file(type='file', id='photo', name='photo', accept='image/*', required)
+          label(for='photo')
+            i.fa.fa-user
+          label(for='fullName') Full Name:
+          input.form__element.form__element--primary(name='fullname', id='fullName', placeholder='John Doe', type='text', required)
+          label(for='signUsername') Username:
+          input.form__element.form__element--primary(name='signUsername', id='signUsername', placeholder='john.doe', type='text', required)
+          label(for='email') Email:
+          input.form__element.form__element--primary(name='email', id='email', placeholder='example@email.com', type='email', required)
+          label(for='signPassword') Password:
+          input.form__element.form__element--primary(name='signPassword', id='signPassword', placeholder='•••••••••••••••', type='password', required)
+          label(for='passwordRepeat') Repeat Password:
+          input.form__element.form__element--primary(name='passwordRepeat', id='passwordRepeat', placeholder='•••••••••••••••', type='password', required)
+          label(for='description') Description:
+          textarea.form__element.form__element--primary(name='description', rows="5", id='description', placeholder='...', required)
+          button.btn.btn--primary.centered__block.mt-1 I'm Ready
