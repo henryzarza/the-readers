@@ -87,11 +87,11 @@ label {
       display: flex;
       justify-content: space-between; }
 
-.title {
+.title, .navbar__link--title {
   font-family: "Kaushan Script", cursive;
   margin: 0;
   text-align: center;
-  color: #5DCB44;
+  color: #5DCB44 !important;
   text-shadow: 0.2rem 0.2rem 0.8rem #64cd4c; }
   .title--big {
     font-size: 4.3rem; }
@@ -113,6 +113,33 @@ label {
       border-style: dashed;
       border-color: #efefef; }
 
+.navbar {
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0;
+  overflow: hidden;
+  background-color: #282E2C;
+  position: fixed;
+  top: 0;
+  width: 100%; }
+  .navbar__element {
+    float: right; }
+    .navbar__element:first-child {
+      float: left; }
+  .navbar__link {
+    color: #efefef;
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none; }
+    .navbar__link:hover, .navbar__link:active {
+      background-color: #273D41; }
+    .navbar__link--title {
+      font-size: 2rem; }
+      .navbar__link--title:hover, .navbar__link--title:active {
+        background-color: #282E2C; }
+    .navbar__link--active {
+      background-color: #5DCB44 !important; }
+
 .centered__block {
   display: block;
   margin: auto; }
@@ -133,6 +160,8 @@ label {
   .login__content {
     padding: 0 1rem !important; }
   .title--big {
-    font-size: 3rem; } }
+    font-size: 3rem; }
+  .navbar__element, .navbar__element:first-child {
+    float: none; } }
 
 /*# sourceMappingURL=style.css.map */

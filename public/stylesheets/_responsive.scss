@@ -1,8 +1,7 @@
 @media (max-width: 30rem) {
-  .login__content {
-    padding: 0 1rem !important;
-  }
-  .title--big {
-    font-size: 3rem;    
-  }
+  .login__content { padding: 0 1rem !important; }
+
+  .title--big {font-size: 3rem; }
+
+  .navbar__element, .navbar__element:first-child { float: none; }
 }
