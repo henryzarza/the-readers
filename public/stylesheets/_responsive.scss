@@ -23,4 +23,14 @@
 
     .submenu { top: 2.3rem; }
   }
+  .container {
+    padding: 8rem 1rem 1.5rem;
+
+    @at-root #{&}__title { font-size: 2.5rem; }
+
+    @at-root #{&}__header {
+      flex-direction: column;
+      margin-bottom: .7rem;
+    }
+  }
 }

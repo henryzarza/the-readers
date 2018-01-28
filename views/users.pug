@@ -3,7 +3,10 @@ extends layout
 block content
   include navbar.pug
   .container
-    h1.container__title Users
+    .container__header
+      h1.container__title Users
+      input.form__element.form__element--search(id='search', placeholder='Search...', type='text')
+  
     .container__card
       each val, index in ['one', 'two', 'three', 'four', 'five']
         .card(data-ref='card_' + index)
