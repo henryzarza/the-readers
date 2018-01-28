@@ -247,3 +247,50 @@ label {
   }
 }
 /* End navbar */
+
+.container {
+  padding: 4rem 3rem 2rem;
+
+  @at-root #{&}__title {
+    @extend .title;
+    text-shadow: none;
+    margin-bottom: 1.5rem;
+    font-size: 3.5rem;
+    color: $dark-color !important;
+  }
+
+  @at-root #{&}__card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: .8rem;
+    align-items: center;
+  }
+}
+
+.card {
+  background-color: $white;
+  box-shadow: .1rem 0.3rem 1rem 0 rgba(0, 0, 0, .14);
+  padding: 1rem;
+  border-radius: .3rem;
+
+  @at-root #{&}__img {
+    width: 10rem;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  @at-root #{&}__username {
+    margin: 0;
+    display: inline-block;
+
+    @at-root #{&}--online {
+      background-color: $primary-color;
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+      display: inline-block;
+      border: .04rem solid $black;
+    }
+  }
+}

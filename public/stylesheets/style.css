@@ -87,7 +87,7 @@ label {
       display: flex;
       justify-content: space-between; }
 
-.title, .navbar__title {
+.title, .navbar__title, .container__title {
   font-family: "Kaushan Script", cursive;
   margin: 0;
   text-align: center;
@@ -190,6 +190,40 @@ label {
       font-weight: 600; }
 
 /* End navbar */
+.container {
+  padding: 4rem 3rem 2rem; }
+  .container__title {
+    text-shadow: none;
+    margin-bottom: 1.5rem;
+    font-size: 3.5rem;
+    color: #282E2C !important; }
+  .container__card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: .8rem;
+    align-items: center; }
+
+.card {
+  background-color: #efefef;
+  box-shadow: 0.1rem 0.3rem 1rem 0 rgba(0, 0, 0, 0.14);
+  padding: 1rem;
+  border-radius: .3rem; }
+  .card__img {
+    width: 10rem;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto; }
+  .card__username {
+    margin: 0;
+    display: inline-block; }
+    .card__username--online {
+      background-color: #5DCB44;
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+      display: inline-block;
+      border: 0.04rem solid #191919; }
+
 .centered__block {
   display: block;
   margin: auto; }
