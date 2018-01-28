@@ -5,8 +5,21 @@ block content
   .container
     h1.container__title Users
     .container__card
-      .card
-        img.card__img(src='http://lorempixel.com/150/150/people/', alt='User')
-        .card__info
-          h2.card__username jane_doe
-          span.card__username--online
+      each val, index in ['one', 'two', 'three', 'four', 'five']
+        .card(data-ref='card_' + index)
+          img.card__img.addClassActive(data-ref='card_' + index, src='https://specials-images.forbesimg.com/imageserve/59f4e6c24bbe6f37dda1445b/416x416.jpg?background=000000&cropX1=21&cropX2=1975&cropY1=210&cropY2=2164', alt='User')
+          h2.m-0.centered__text.card__fullname Beyoncé Knowless
+          .card__content
+            .card__header
+              div
+                h2.m-0 Beyoncé Knowless
+                h3.m-0 beyonce_knowless17
+              div
+                a.link.card__link(href='#') #[i.fa.fa-comments]
+                a.link.card__link(href='#') #[i.fa.fa-user]
+                a.link.card__link.removeClassActive #[i.fa.fa-long-arrow-left(data-ref='card_' + index)]
+            .card__description
+              | Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cum iusto voluptatem hic nulla iste dolores odit qui, temporibus, porro placeat autem illum. Eligendi hic repellat quam eveniet tempora optio?
+              | Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cum iusto voluptatem hic nulla iste dolores odit qui, temporibus, porro placeat autem illum. Eligendi hic repellat quam eveniet tempora optio?
+              | Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cum iusto voluptatem hic nulla iste dolores odit qui, temporibus, porro placeat autem illum. Eligendi hic repellat quam eveniet tempora optio?
+              | Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cum iusto voluptatem hic nulla iste dolores odit qui, temporibus, porro placeat autem illum. Eligendi hic repellat quam eveniet tempora optio?

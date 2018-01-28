@@ -12,6 +12,11 @@ body {
   font-weight: $font-weight-base;
   background-color: $light-color;
   color: $black;
+  line-height: $line-height;
+}
+
+h1, h2, h3 {
+  line-height: $line-height-title;
 }
 
 label {
@@ -77,6 +82,8 @@ label {
   cursor: pointer;
   color: inherit;
   transition: .25s all;
+
+  &:focus, &:hover, &:active { font-weight: $font-weight-bold; }
 
   @at-root #{&}--primary {
     color: $primary-color;
@@ -161,6 +168,7 @@ label {
   width: 100%;
   display: flex;
   align-items: center;
+  z-index: 1;
 
   @at-root #{&}__title {
     @extend .title;
@@ -273,24 +281,59 @@ label {
   padding: 1rem;
   border-radius: .3rem;
 
+  @at-root #{&}--active {
+    .card__img { transform: scale(0) rotate(720deg); }
+    .card__fullname { display: none; }
+    .card__content { display: block; }
+  }
+  @at-root #{&}--activeEnd {
+    .card__img { display: none; }
+    .card__content { transform: scale(1); }
+  }
+
+  @at-root #{&}__fullname {
+    opacity: 1;
+    transition: opacity .3s linear;
+  }
+
   @at-root #{&}__img {
     width: 10rem;
     border-radius: 50%;
     display: block;
     margin: 0 auto;
+    transform: scale(1) rotate(0);
+    transition: transform .3s linear;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: .1rem 0.3rem 1rem 0 rgba(0, 0, 0, .5);
+    }
   }
 
-  @at-root #{&}__username {
-    margin: 0;
-    display: inline-block;
+  @at-root #{&}__link {
+    color: $secondary-color;
+    margin: 0 .2rem;
 
-    @at-root #{&}--online {
-      background-color: $primary-color;
-      width: 0.8rem;
-      height: 0.8rem;
-      border-radius: 50%;
-      display: inline-block;
-      border: .04rem solid $black;
+    &:focus, &:hover, &:active {
+      text-decoration: underline;
+      color: lighten($secondary-color, 30%);
     }
+  }
+
+  @at-root #{&}__content {
+    display: none;
+    transform: scale(0);
+    transition: transform .3s linear;
+  }
+
+  @at-root #{&}__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @at-root #{&}__description {
+    margin-top: .5rem;
+    max-height: 10rem;
+    overflow-y: auto;
   }
 }
