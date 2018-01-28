@@ -113,6 +113,7 @@ label {
       border-style: dashed;
       border-color: #efefef; }
 
+/* Navbar styles */
 .navbar {
   list-style: none;
   margin: 0;
@@ -135,12 +136,19 @@ label {
     text-decoration: none;
     margin-right: -.07rem;
     cursor: pointer; }
-    .navbar__link:hover, .navbar__link:active {
-      background-color: #273D41; }
+    .navbar__link:hover:not(.navbar__link--active), .navbar__link:active {
+      color: #5DCB44;
+      font-weight: 600; }
     .navbar__link--active {
-      background-color: #345257 !important; }
-    .navbar__link--submenu {
-      position: relative; }
+      background-color: #345257; }
+  .navbar__message {
+    width: .8rem;
+    height: .8rem;
+    background-color: #B92933;
+    border-radius: 50%;
+    color: #efefef;
+    position: absolute;
+    left: 1.6rem; }
 
 .submenu {
   list-style: none;
@@ -149,13 +157,15 @@ label {
   padding-right: .3rem;
   background-color: #273D41;
   position: absolute;
-  top: -3rem;
+  top: 2.8rem;
   right: 0;
+  width: 10rem;
   opacity: 0;
-  transition: opacity, top .5s linear; }
+  visibility: hidden;
+  transition: opacity .3s linear; }
   .submenu--visible {
     opacity: 1;
-    top: 3.9rem; }
+    visibility: visible; }
   .submenu::before {
     content: '';
     position: absolute;
@@ -179,6 +189,7 @@ label {
       color: #5DCB44;
       font-weight: 600; }
 
+/* End navbar */
 .centered__block {
   display: block;
   margin: auto; }
@@ -195,12 +206,24 @@ label {
 .centered__text {
   text-align: center; }
 
-@media (max-width: 30rem) {
+.pos__relative {
+  position: relative; }
+
+@media screen and (max-width: 30rem) {
   .login__content {
     padding: 0 1rem !important; }
   .title--big {
-    font-size: 3rem; }
-  .navbar__element, .navbar__element:first-child {
-    float: none; } }
+    font-size: 3rem; } }
+
+@media screen and (max-width: 26rem) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-end; }
+    .navbar__title {
+      margin-right: 1rem; }
+    .navbar__link {
+      padding: 0 1rem; }
+    .navbar .submenu {
+      top: 2.3rem; } }
 
 /*# sourceMappingURL=style.css.map */

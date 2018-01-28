@@ -1,7 +1,18 @@
-@media (max-width: 30rem) {
+@media screen and (max-width: 30rem) {
   .login__content { padding: 0 1rem !important; }
 
   .title--big {font-size: 3rem; }
+}
 
-  .navbar__element, .navbar__element:first-child { float: none; }
+@media screen and (max-width: 26rem) {
+  .navbar { 
+    flex-direction: column;
+    align-items: flex-end;
+
+    @at-root #{&}__title { margin-right: 1rem; }
+
+    @at-root #{&}__link { padding: 0 1rem; }
+
+    .submenu { top: 2.3rem; }
+  }
 }

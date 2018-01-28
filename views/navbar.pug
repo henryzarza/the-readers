@@ -1,12 +1,11 @@
 ul.navbar
   li.navbar__title The Readers
-  li
-    a.navbar__link.navbar__link--active(href="#") #[i.fa.fa-user] Profile
-  li
-    a.navbar__link(href="#") #[i.fa.fa-envelope] Messages
-  li
-    a.navbar__link.navbar__link--submenu Jane Doe #[i.fa.fa-caret-down]
+  li.navbar__element
+    a.navbar__link.pos__relative(href="#") #[i.fa.fa-envelope] Messages
+      span.navbar__message
+  li.navbar__element.pos__relative
+    a.navbar__link#link--submenu Jane Doe #[i.fa.fa-caret-down]
     ul.submenu
-      li.submenu__element #[a.submenu__link(href="#") Update Data]
+      li.submenu__element #[a.submenu__link(href="#") Profile]
       li.submenu__element #[a.submenu__link(href="#") Change Password]
       li.submenu__element #[a.submenu__link(href="#") Close Session]

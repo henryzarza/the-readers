@@ -5,10 +5,7 @@ elContent.forEach(el => el.addEventListener('click', (e) => {
   console.log(e);
 })); */
 
-/* const navbar = document.querySelector('.navbar__link--submenu');
+const linkSubmenu = document.querySelector('#link--submenu');
 const submenu = document.querySelector('.submenu');
 
-navbar.addEventListener('click', () => {
-  submenu.classList.toggle('submenu--visible');
-  console.log('Entro');
-}); */
+linkSubmenu.addEventListener('click', () => submenu.classList.toggle('submenu--visible'));
