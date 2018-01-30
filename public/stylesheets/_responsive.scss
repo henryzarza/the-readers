@@ -12,7 +12,7 @@
   .title--big {font-size: 3rem; }
 }
 
-@media screen and (max-width: 26rem) {
+@media screen and (max-width: 30rem) {
   .navbar { 
     flex-direction: column;
     align-items: flex-end;
@@ -33,4 +33,5 @@
       margin-bottom: .7rem;
     }
   }
+  .form__element--search { width: 90%; }
 }

@@ -18,7 +18,7 @@ block content
                 h2.m-0 Beyoncé Knowless
                 h3.m-0 beyonce_knowless17
               div
-                a.link.card__link(href='#') #[i.fa.fa-comments]
+                a.link.card__link#showChat #[i.fa.fa-comments]
                 a.link.card__link(href='#') #[i.fa.fa-user]
                 a.link.card__link.removeClassActive #[i.fa.fa-long-arrow-left(data-ref='card_' + index)]
             .card__description
@@ -27,22 +27,22 @@ block content
               | Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cum iusto voluptatem hic nulla iste dolores odit qui, temporibus, porro placeat autem illum. Eligendi hic repellat quam eveniet tempora optio?
               | Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cum iusto voluptatem hic nulla iste dolores odit qui, temporibus, porro placeat autem illum. Eligendi hic repellat quam eveniet tempora optio?
 
-  //
-    .chat
-      .chat__header
-        h4.m-0 Beyoncé Knowless
-        a.link.link--danger#minimizeChat #[i.fa.fa-window-minimize]
-        a.link.link--danger#closeChat #[i.fa.fa-times-circle-o]
-      .chat__content
-        p.chat__message--sender
-          | Hi, how are you?
-        p.chat__message--receiver
-          | Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          | Nostrum aut nulla laudantium officia nobis?
-        p.chat__message--sender
-          | Totam asperiores quas aspernatur fugit eius placeat quibusdam quidem illum vel assumenda quae, officia corrupti nam, praesentium consequatur laborum. Reiciendis, nesciunt distinctio.
-      .chat__footer
-        input.form__element(id='sendMessage', placeholder='...', type='text')
-        button.btn #[i.fa.fa-paper-plane]
+  .chat
+    .chat__header
+      h4.m-0 Beyoncé Knowless
+      a.link.link--danger#hideChat #[i.fa.fa-times-circle]
+    .chat__content
+      p.chat__message.chat__message--sender
+        | Hi, how are you?
+      p.chat__message.chat__message--receiver
+        | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        | Nostrum aut nulla laudantium officia nobis?
+      p.chat__message.chat__message--receiver
+        | Alias illo at necessitatibus deleniti doloribus nam voluptatibus, modi culpa mollitia praesentium perferendis quos sunt consequatur ipsa minima fugit dolorem sed numquam?
+      p.chat__message.chat__message--sender
+        | Totam asperiores quas aspernatur fugit eius placeat quibusdam quidem illum vel assumenda quae, officia corrupti nam, praesentium consequatur laborum. Reiciendis, nesciunt distinctio.
+    .chat__footer
+      input.form__element(id='sendMessage', placeholder='...', type='text')
+      button.btn #[i.fa.fa-paper-plane]
   
   button.btn.btn--scrollUp #[i.fa.fa-chevron-up]

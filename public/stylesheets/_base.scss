@@ -35,6 +35,7 @@ label {
   font-size: 1rem;
   margin-bottom: .2rem;
   resize: none;
+  background-color: $white;
   
   &:focus {
     outline: none;
@@ -76,7 +77,7 @@ label {
 
   @at-root #{&}--scrollUp {
     border-radius: 50%;
-    background-color: $dark-color;
+    background-color: $dark-primary-color;
     color: $white;
     position: fixed;
     bottom: 1rem;
@@ -85,7 +86,7 @@ label {
     opacity: 0;
 
     &:focus, &:hover, &:active {
-      background-color: lighten($dark-color, 5%);
+      background-color: lighten($dark-primary-color, 5%);
       box-shadow: .1rem 0.3rem 1rem 0 rgba(0, 0, 0, .5);
     }
   }
@@ -105,6 +106,13 @@ label {
 
     &:focus, &:hover, &:active {
       text-decoration: underline;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  @at-root #{&}--danger {
+    &:focus, &:hover, &:active {
+      color: $danger-color;
       font-weight: $font-weight-bold;
     }
   }
@@ -356,5 +364,96 @@ label {
     margin-top: .5rem;
     max-height: 10rem;
     overflow-y: auto;
+  }
+}
+
+// Chat
+.chat {
+  border: .05rem solid $black;
+  position: fixed;
+  bottom: -24rem;
+  right: 5rem;
+  width: 16rem;
+  background-color: $white;
+  transition: bottom .4s linear;
+
+  @at-root #{&}--show {
+    bottom: 0;
+  }
+
+  @at-root #{&}__header {
+    background-color: $secondary-color;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    padding: .3rem;
+  }
+
+  @at-root #{&}__content {
+    padding: .3rem .7rem;
+    max-height: 17rem;
+    overflow-y: auto;
+  }
+
+  @at-root #{&}__footer {
+    padding: .4rem .7rem;
+    border-top: .05rem solid $secondary-color;
+    display: flex;
+
+    & .form__element { 
+      border-right: none;
+      margin-bottom: 0;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+
+      & + .btn {
+        padding: 0 .5rem 0 .3rem;
+        border-left: none;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        color: $white;
+        background-color: $secondary-color;
+
+        &:hover, &:active, &:focus {
+          background-color: lighten($secondary-color, 15%);
+        }
+      }
+    }
+  }
+
+  @at-root #{&}__message {
+    margin: 0;
+    padding: .3rem;
+    margin-bottom: .5rem;
+    border-radius: .2rem;
+    width: 85%;
+    position: relative;
+    font-size: .9rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: .4rem;
+      border-top: .4rem solid transparent;
+      border-bottom: .4rem solid transparent;
+    }
+
+    @at-root #{&}--receiver {
+      background-color: darken($light-color, 5%);
+      margin-left: 2rem;
+      &::before {
+        right: -.5rem;
+        border-left: .6rem solid darken($light-color, 5%);
+      }
+    }
+
+    @at-root #{&}--sender {
+      background-color: darken($optional-color, 17%);
+      color: $white;
+      &::before {
+        left: -.5rem;
+        border-right: .6rem solid darken($optional-color, 17%);
+      }
+    }
   }
 }

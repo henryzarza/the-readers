@@ -35,3 +35,9 @@ btnScroll.addEventListener('click', () => {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 });
+
+// Chat
+const chatRef = document.querySelector('.chat');
+
+document.querySelector('#hideChat').addEventListener('click', () => chatRef.classList.remove('chat--show'));
+document.querySelectorAll('#showChat').forEach(el => el.addEventListener('click', () => chatRef.classList.add('chat--show')));
