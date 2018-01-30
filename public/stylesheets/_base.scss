@@ -73,6 +73,22 @@ label {
       box-shadow: 0 0 2rem lighten($primary-color, 3%);
     }
   }
+
+  @at-root #{&}--scrollUp {
+    border-radius: 50%;
+    background-color: $dark-color;
+    color: $white;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: .7rem;
+    opacity: 0;
+
+    &:focus, &:hover, &:active {
+      background-color: lighten($dark-color, 5%);
+      box-shadow: .1rem 0.3rem 1rem 0 rgba(0, 0, 0, .5);
+    }
+  }
 }
 
 .link {

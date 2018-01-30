@@ -8,7 +8,7 @@ block content
       input.form__element.form__element--search(id='search', placeholder='Search...', type='text')
   
     .container__card
-      each val, index in ['one', 'two', 'three', 'four', 'five']
+      each val, index in ['one', 'two', 'three', 'four', 'five', 'one', 'two', 'three', 'four', 'five']
         .card(data-ref='card_' + index)
           img.card__img.addClassActive(data-ref='card_' + index, src='https://specials-images.forbesimg.com/imageserve/59f4e6c24bbe6f37dda1445b/416x416.jpg?background=000000&cropX1=21&cropX2=1975&cropY1=210&cropY2=2164', alt='User')
           h2.m-0.centered__text.card__fullname Beyoncé Knowless
@@ -26,3 +26,23 @@ block content
               | Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cum iusto voluptatem hic nulla iste dolores odit qui, temporibus, porro placeat autem illum. Eligendi hic repellat quam eveniet tempora optio?
               | Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cum iusto voluptatem hic nulla iste dolores odit qui, temporibus, porro placeat autem illum. Eligendi hic repellat quam eveniet tempora optio?
               | Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cum iusto voluptatem hic nulla iste dolores odit qui, temporibus, porro placeat autem illum. Eligendi hic repellat quam eveniet tempora optio?
+
+  //
+    .chat
+      .chat__header
+        h4.m-0 Beyoncé Knowless
+        a.link.link--danger#minimizeChat #[i.fa.fa-window-minimize]
+        a.link.link--danger#closeChat #[i.fa.fa-times-circle-o]
+      .chat__content
+        p.chat__message--sender
+          | Hi, how are you?
+        p.chat__message--receiver
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          | Nostrum aut nulla laudantium officia nobis?
+        p.chat__message--sender
+          | Totam asperiores quas aspernatur fugit eius placeat quibusdam quidem illum vel assumenda quae, officia corrupti nam, praesentium consequatur laborum. Reiciendis, nesciunt distinctio.
+      .chat__footer
+        input.form__element(id='sendMessage', placeholder='...', type='text')
+        button.btn #[i.fa.fa-paper-plane]
+  
+  button.btn.btn--scrollUp #[i.fa.fa-chevron-up]

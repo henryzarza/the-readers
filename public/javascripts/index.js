@@ -23,3 +23,15 @@ removeClassActive.forEach(el => el.addEventListener('click', (e) => {
     setTimeout(() => currentCard.classList.remove('card--active'), 300);
   })
 )
+
+// Scroll to top
+const btnScroll = document.querySelector('.btn--scrollUp');
+
+window.onscroll = () => {
+  btnScroll.style.opacity = (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) ? '1' : '0';
+};
+
+btnScroll.addEventListener('click', () => {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+});

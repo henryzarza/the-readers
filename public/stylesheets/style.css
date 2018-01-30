@@ -59,6 +59,18 @@ label {
       background-color: #5DCB44;
       color: #191919;
       box-shadow: 0 0 2rem #67ce50; }
+  .btn--scrollUp {
+    border-radius: 50%;
+    background-color: #282E2C;
+    color: #efefef;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: .7rem;
+    opacity: 0; }
+    .btn--scrollUp:focus, .btn--scrollUp:hover, .btn--scrollUp:active {
+      background-color: #343c39;
+      box-shadow: 0.1rem 0.3rem 1rem 0 rgba(0, 0, 0, 0.5); }
 
 .link {
   text-decoration: none;
@@ -298,7 +310,7 @@ label {
   .title--big {
     font-size: 3rem; } }
 
-@media screen and (max-width: 26rem) {
+@media screen and (max-width: 30rem) {
   .navbar {
     flex-direction: column;
     align-items: flex-end; }
@@ -314,6 +326,8 @@ label {
       font-size: 2.5rem; }
     .container__header {
       flex-direction: column;
-      margin-bottom: .7rem; } }
+      margin-bottom: .7rem; }
+  .form__element--search {
+    width: 90%; } }
 
 /*# sourceMappingURL=style.css.map */
