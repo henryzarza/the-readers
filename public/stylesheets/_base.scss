@@ -137,6 +137,12 @@ label {
 
     @at-root #{&}__content {
       padding: 0 4rem;
+
+      form { transition: transform .3s linear; }
+    }
+
+    .form__hide {
+      transform: scale(0);
     }
 
     @at-root #{&}__buttons {

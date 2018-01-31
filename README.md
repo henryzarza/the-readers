@@ -1,7 +1,7 @@
 # The Readers
 
 This is a personal project using:
-* [node.js](https://nodejs.org/) - evented I/O for the backend
+* [Node.js](https://nodejs.org/) - evented I/O for the backend
 * [Express](http://expressjs.com/) - fast node.js network app framework [@tjholowaychuk]
 * [Pug](https://pugjs.org) - Engine view for HTML
 * [MongoDB](https://www.mongodb.com) - Building on the Best of Relational with the Innovations of NoSQL
@@ -23,4 +23,7 @@ $ npm install
 $ npm start
 ```
 
-Open your navigator and go to the address localhost:3000
+Open your navigator and go to the address [localhost:3000](http://localhost:3000)
+
+### Troubles
+In case of that you have problems go to documentation of the package [node-sass](https://github.com/sass/node-sass/blob/master/TROUBLESHOOTING.md#troubleshooting)

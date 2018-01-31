@@ -13,17 +13,17 @@ block content
           input.form__element.form__element--primary(id='password', placeholder='•••••••••••••••', type='password', required)
           button.btn.btn--primary.centered__block.mt-1 Let's Go
           .login__buttons.mt-1
-            a.link.link--primary.change__content--login Sign in
-            a.link.link--primary.change__content--login Forgot password
+            a.link.link--primary.linkShow(data-show='signForm') Sign in
+            a.link.link--primary.linkShow(data-show='resetForm') Forgot password
         
         //Remember password
-        form.hide(method='POST', name='resetForm')
+        form.hide.form__hide(method='POST', name='resetForm')
           label(for='resetEmail') Email:
           input.form__element.form__element--primary(name='resetEmail', id='resetEmail', placeholder='example@email.com', type='email', required)
           button.btn.btn--primary.centered__block.mt-1 I'm Ready
 
         //Sign in
-        form.hide(method='POST', name='signForm')
+        form.hide.form__hide(method='POST', name='signForm')
           input.input__file(type='file', id='photo', name='photo', accept='image/*', required)
           label(for='photo')
             i.fa.fa-user
@@ -40,3 +40,6 @@ block content
           label(for='description') Description:
           textarea.form__element.form__element--primary(name='description', rows="5", id='description', placeholder='...', required)
           button.btn.btn--primary.centered__block.mt-1 I'm Ready
+
+block scripts
+  script(src='/javascripts/login.js')
