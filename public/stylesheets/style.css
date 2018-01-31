@@ -39,8 +39,23 @@ label {
     border-color: #64cd4c; }
     .form__element--primary:focus {
       box-shadow: 0 0 0.5rem #67ce50; }
-  .form__element--search {
-    width: 15rem; }
+
+.input-group, .chat__footer {
+  display: flex; }
+  .input-group .form__element, .chat__footer .form__element {
+    border-right: none;
+    margin-bottom: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0; }
+    .input-group .form__element + .btn, .chat__footer .form__element + .btn {
+      padding: 0 .5rem;
+      border-left: none;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      color: #efefef;
+      background-color: #273D41; }
+      .input-group .form__element + .btn:hover, .chat__footer .form__element + .btn:hover, .input-group .form__element + .btn:active, .chat__footer .form__element + .btn:active, .input-group .form__element + .btn:focus, .chat__footer .form__element + .btn:focus {
+        background-color: #446a71; }
 
 .btn {
   font-size: 1rem;
@@ -304,22 +319,9 @@ label {
     overflow-y: auto; }
   .chat__footer {
     padding: .4rem .7rem;
-    border-top: 0.05rem solid #273D41;
-    display: flex; }
-    .chat__footer .form__element {
-      border-right: none;
-      margin-bottom: 0;
-      border-bottom-right-radius: 0;
-      border-top-right-radius: 0; }
-      .chat__footer .form__element + .btn {
-        padding: 0 .5rem 0 .3rem;
-        border-left: none;
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0;
-        color: #efefef;
-        background-color: #273D41; }
-        .chat__footer .form__element + .btn:hover, .chat__footer .form__element + .btn:active, .chat__footer .form__element + .btn:focus {
-          background-color: #446a71; }
+    border-top: 0.05rem solid #273D41; }
+    .chat__footer .form__element + .btn {
+      padding: 0 .5rem 0 .3rem; }
   .chat__message {
     margin: 0;
     padding: .3rem;
@@ -399,8 +401,6 @@ label {
       font-size: 2.5rem; }
     .container__header {
       flex-direction: column;
-      margin-bottom: .7rem; }
-  .form__element--search {
-    width: 90%; } }
+      margin-bottom: .7rem; } }
 
 /*# sourceMappingURL=style.css.map */

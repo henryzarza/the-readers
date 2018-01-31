@@ -47,7 +47,26 @@ label {
 
     &:focus { box-shadow: 0 0 .5rem lighten($primary-color, 3%); }
   }
-  @at-root #{&}--search { width: 15rem; }
+}
+
+.input-group {
+  display: flex;
+
+  & .form__element {
+    border-right: none;
+    margin-bottom: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    & + .btn {
+      padding: 0 .5rem;
+      border-left: none;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      color: $white;
+      background-color: $secondary-color;
+      &:hover, &:active, &:focus { background-color: lighten($secondary-color, 15%); }
+    }
+  }
 }
 
 .btn {
@@ -402,29 +421,10 @@ label {
   }
 
   @at-root #{&}__footer {
+    @extend .input-group;
     padding: .4rem .7rem;
     border-top: .05rem solid $secondary-color;
-    display: flex;
-
-    & .form__element { 
-      border-right: none;
-      margin-bottom: 0;
-      border-bottom-right-radius: 0;
-      border-top-right-radius: 0;
-
-      & + .btn {
-        padding: 0 .5rem 0 .3rem;
-        border-left: none;
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0;
-        color: $white;
-        background-color: $secondary-color;
-
-        &:hover, &:active, &:focus {
-          background-color: lighten($secondary-color, 15%);
-        }
-      }
-    }
+    & .form__element + .btn { padding: 0 .5rem 0 .3rem; }
   }
 
   @at-root #{&}__message {
