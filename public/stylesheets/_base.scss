@@ -234,12 +234,10 @@ label {
     margin-right: -.07rem;
     cursor: pointer;
     
-    &:hover:not(.navbar__link--active), &:active {
+    &:hover, &:active {
       color: $primary-color;
       font-weight: $font-weight-bold;
     }
-
-    @at-root #{&}--active { background-color: lighten($secondary-color, 7%); }
   }
 
   @at-root #{&}__message {
@@ -326,6 +324,15 @@ label {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: .8rem;
     align-items: center;
+  }
+
+  @at-root #{&}--message {
+    display: grid;
+    max-height: 100vh;
+    border: 1pt solid red;
+    height: 100vh;
+    padding: 5rem 1rem 1rem;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -418,6 +425,11 @@ label {
     padding: .3rem .7rem;
     max-height: 17rem;
     overflow-y: auto;
+
+    @at-root #{&}--big {
+      height: calc(100vh - 197px);
+      max-height: calc(100vh - 197px);
+    }
   }
 
   @at-root #{&}__footer {
@@ -461,5 +473,67 @@ label {
         border-right: .6rem solid darken($optional-color, 17%);
       }
     }
+  }
+}
+
+// Messages
+.containerMessages {
+  border-right: .05rem solid $black;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  overflow-y: auto;
+}
+
+.listMessages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 1rem;
+
+  @at-root #{&}__item {
+    border-bottom: .05rem solid $black;
+    padding: .7rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color .25s linear;
+    
+    &:hover {
+      background-color: $optional-color;
+      cursor: pointer;
+    }
+    &:last-child { border-bottom: none; }
+
+    @at-root #{&}--info {
+      display: flex;
+      align-items: center;
+    }
+  }
+  @at-root #{&}__img {
+    width: 2rem;
+    border-radius: .3rem;
+    margin-right: .5rem;
+  }
+  @at-root #{&}__quantity {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    background-color: $primary-color;
+    text-align: center;
+    font-weight: $font-weight-bold;
+    color: $white;
+  }
+}
+
+.containerChat {
+  grid-column: 2/4;
+  background-color: $white;
+
+  @at-root #{&}__header {
+    padding: 1rem;
+    background-color: $secondary-color;
+    color: $white;
+    display: flex;
+    align-items: center;
   }
 }

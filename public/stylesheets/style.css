@@ -180,11 +180,9 @@ label {
     text-decoration: none;
     margin-right: -.07rem;
     cursor: pointer; }
-    .navbar__link:hover:not(.navbar__link--active), .navbar__link:active {
+    .navbar__link:hover, .navbar__link:active {
       color: #5DCB44;
       font-weight: 600; }
-    .navbar__link--active {
-      background-color: #345257; }
   .navbar__message {
     width: .8rem;
     height: .8rem;
@@ -250,6 +248,13 @@ label {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: .8rem;
     align-items: center; }
+  .container--message {
+    display: grid;
+    max-height: 100vh;
+    border: 1pt solid red;
+    height: 100vh;
+    padding: 5rem 1rem 1rem;
+    grid-template-columns: repeat(3, 1fr); }
 
 .card {
   background-color: #efefef;
@@ -317,6 +322,9 @@ label {
     padding: .3rem .7rem;
     max-height: 17rem;
     overflow-y: auto; }
+    .chat__content--big {
+      height: calc(100vh - 197px);
+      max-height: calc(100vh - 197px); }
   .chat__footer {
     padding: .4rem .7rem;
     border-top: 0.05rem solid #273D41; }
@@ -348,6 +356,55 @@ label {
       .chat__message--sender::before {
         left: -.5rem;
         border-right: 0.6rem solid #106f5c; }
+
+.containerMessages {
+  border-right: 0.05rem solid #191919;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  overflow-y: auto; }
+
+.listMessages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 1rem; }
+  .listMessages__item {
+    border-bottom: 0.05rem solid #191919;
+    padding: .7rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color .25s linear; }
+    .listMessages__item:hover {
+      background-color: #1BBB9B;
+      cursor: pointer; }
+    .listMessages__item:last-child {
+      border-bottom: none; }
+    .listMessages__item--info {
+      display: flex;
+      align-items: center; }
+  .listMessages__img {
+    width: 2rem;
+    border-radius: .3rem;
+    margin-right: .5rem; }
+  .listMessages__quantity {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    background-color: #5DCB44;
+    text-align: center;
+    font-weight: 600;
+    color: #efefef; }
+
+.containerChat {
+  grid-column: 2/4;
+  background-color: #efefef; }
+  .containerChat__header {
+    padding: 1rem;
+    background-color: #273D41;
+    color: #efefef;
+    display: flex;
+    align-items: center; }
 
 .centered__block {
   display: block;

@@ -2,12 +2,54 @@ extends layout
 
 block content
   include navbar.pug
-  .container
-    .container__header
-      h1.container__title Messages
+  .container.container--message
+    .containerMessages
       .input-group
         input.form__element(id='search', placeholder='Search...', type='text')
         button.btn #[i.fa.fa-search]
+      ul.listMessages
+        each val in [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+          li.listMessages__item
+            .listMessages__item--info
+              img.listMessages__img(src="https://pbs.twimg.com/profile_images/955803874463571969/-R8etznz_400x400.jpg", alt="Britney Spears")
+              h3.m-0 Britney Spears
+            .listMessages__quantity 3
+    .containerChat
+      .containerChat__header
+        img.listMessages__img(src="https://pbs.twimg.com/profile_images/955803874463571969/-R8etznz_400x400.jpg", alt="Britney Spears")
+        h3.m-0 Britney Spears
+      .containerChat__content        
+        .chat__content.chat__content--big
+          p.chat__message.chat__message--sender
+            | Hi, how are you?
+          p.chat__message.chat__message--receiver
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            | Nostrum aut nulla laudantium officia nobis?
+          p.chat__message.chat__message--receiver
+            | Alias illo at necessitatibus deleniti doloribus nam voluptatibus, modi culpa mollitia praesentium perferendis quos sunt consequatur ipsa minima fugit dolorem sed numquam?
+          p.chat__message.chat__message--sender
+            | Totam asperiores quas aspernatur fugit eius placeat quibusdam quidem illum vel assumenda quae, officia corrupti nam, praesentium consequatur laborum. Reiciendis, nesciunt distinctio.
+          p.chat__message.chat__message--sender
+            | Hi, how are you?
+          p.chat__message.chat__message--receiver
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            | Nostrum aut nulla laudantium officia nobis?
+          p.chat__message.chat__message--receiver
+            | Alias illo at necessitatibus deleniti doloribus nam voluptatibus, modi culpa mollitia praesentium perferendis quos sunt consequatur ipsa minima fugit dolorem sed numquam?
+          p.chat__message.chat__message--sender
+            | Totam asperiores quas aspernatur fugit eius placeat quibusdam quidem illum vel assumenda quae, officia corrupti nam, praesentium consequatur laborum. Reiciendis, nesciunt distinctio.
+          p.chat__message.chat__message--sender
+            | Hi, how are you?
+          p.chat__message.chat__message--receiver
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            | Nostrum aut nulla laudantium officia nobis?
+          p.chat__message.chat__message--receiver
+            | Alias illo at necessitatibus deleniti doloribus nam voluptatibus, modi culpa mollitia praesentium perferendis quos sunt consequatur ipsa minima fugit dolorem sed numquam?
+          p.chat__message.chat__message--sender
+            | Totam asperiores quas aspernatur fugit eius placeat quibusdam quidem illum vel assumenda quae, officia corrupti nam, praesentium consequatur laborum. Reiciendis, nesciunt distinctio.
+        .chat__footer
+          input.form__element(id='sendMessage', placeholder='...', type='text')
+          button.btn #[i.fa.fa-paper-plane]
 
 block scripts
   script(src='/javascripts/messages.js')
