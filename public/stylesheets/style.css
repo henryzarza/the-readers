@@ -428,6 +428,9 @@ label {
 .pos__relative {
   position: relative; }
 
+.no-link {
+  text-decoration: none; }
+
 @media screen and (max-width: 60rem) {
   .container__card {
     grid-template-columns: repeat(2, 1fr); } }

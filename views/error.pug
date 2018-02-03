@@ -5,6 +5,6 @@ block content
     .centered__text
       h1.title.title--error#title-error= error.status
       h1.mt-0 Oops... #{message}
-      a.btn.btn--primary.mt-1 Return
+      a.btn.btn--primary.mt-1.no-link(href='/users') Return
       //pre #{error.stack}
   script(src='/javascripts/error.js')
