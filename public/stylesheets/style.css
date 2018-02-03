@@ -172,7 +172,8 @@ label {
     flex: 1;
     font-size: 2rem;
     text-align: left;
-    padding-left: 1rem; }
+    padding-left: 1rem;
+    text-decoration: none; }
   .navbar__link {
     color: #efefef;
     text-align: center;

@@ -1,11 +1,5 @@
 'use strict'
 
-// Toggle submenu
-const linkSubmenu = document.querySelector('#link--submenu');
-const submenu = document.querySelector('.submenu');
-
-linkSubmenu.addEventListener('click', () => submenu.classList.toggle('submenu--visible'));
-
 // Toggle class active to card
 const addClassActive = document.querySelectorAll('.addClassActive');
 const removeClassActive = document.querySelectorAll('.removeClassActive');
