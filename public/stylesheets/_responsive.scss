@@ -2,6 +2,17 @@
   .container__card { grid-template-columns: repeat(2, 1fr); }
 }
 
+@media screen and (max-width: 48rem) {
+  .containerChat {
+    grid-column: 1/4;
+    margin-top: 1rem;
+  }
+  .containerMessages {
+    height: 40vh;
+    grid-column: 1/4;
+  }
+}
+
 @media screen and (max-width: 40rem) {
   .container__card { grid-template-columns: 1fr; }
 }
