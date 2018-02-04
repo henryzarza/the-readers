@@ -11,10 +11,12 @@
     height: 40vh;
     grid-column: 1/4;
   }
+  .headerUser__content { width: 85%; }
 }
 
 @media screen and (max-width: 40rem) {
   .container__card { grid-template-columns: 1fr; }
+  .headerUser__content { width: 100%; }
 }
 
 @media screen and (max-width: 30rem) {

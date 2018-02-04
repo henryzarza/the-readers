@@ -21,11 +21,9 @@ block content
                 h3.m-0 beyonce_knowless17
               div
                 a.link.card__link#showChat #[i.fa.fa-comments]
-                a.link.card__link(href='#') #[i.fa.fa-user]
+                a.link.card__link(href='/users/beyonce_knowless17') #[i.fa.fa-user]
                 a.link.card__link.removeClassActive #[i.fa.fa-long-arrow-left(data-ref='card_' + index)]
             .card__description
-              | Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cum iusto voluptatem hic nulla iste dolores odit qui, temporibus, porro placeat autem illum. Eligendi hic repellat quam eveniet tempora optio?
-              | Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cum iusto voluptatem hic nulla iste dolores odit qui, temporibus, porro placeat autem illum. Eligendi hic repellat quam eveniet tempora optio?
               | Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cum iusto voluptatem hic nulla iste dolores odit qui, temporibus, porro placeat autem illum. Eligendi hic repellat quam eveniet tempora optio?
               | Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cum iusto voluptatem hic nulla iste dolores odit qui, temporibus, porro placeat autem illum. Eligendi hic repellat quam eveniet tempora optio?
 
@@ -46,8 +44,6 @@ block content
     .chat__footer
       input.form__element(id='sendMessage', placeholder='...', type='text')
       button.btn #[i.fa.fa-paper-plane]
-  
-  button.btn.btn--scrollUp #[i.fa.fa-chevron-up]
 
 block scripts
   script(src='/javascripts/index.js')
