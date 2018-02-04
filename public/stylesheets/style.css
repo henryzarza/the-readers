@@ -140,6 +140,12 @@ label {
     font-size: 4.3rem; }
   .title--error {
     font-size: 10rem; }
+  .title--medium {
+    text-shadow: none;
+    margin-top: 1.5rem;
+    margin-bottom: .5rem;
+    font-size: 2.5rem;
+    color: #282E2C !important; }
 
 .input__file {
   display: none; }
@@ -244,7 +250,7 @@ label {
     margin-bottom: 1.5rem;
     font-size: 3.5rem;
     color: #282E2C !important; }
-  .container__card {
+  .container__card, .container__books {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: .8rem;
@@ -406,6 +412,252 @@ label {
     display: flex;
     align-items: center; }
 
+.headerUser__img {
+  width: 10rem;
+  border-radius: .5rem;
+  margin: .5rem 0; }
+
+.headerUser__content {
+  width: calc(100% - 20rem);
+  margin: 0 auto;
+  text-align: justify;
+  margin-bottom: 1rem; }
+
+/*
+  Styles for the book effect.
+  Adapted from the original https://tympanus.net/codrops/2013/07/11/animated-books-with-css-3d-transforms/
+*/
+.container__books {
+  grid-template-columns: repeat(2, 1fr); }
+
+.book__item {
+  padding: 1rem;
+  margin: .5rem auto; }
+
+.book {
+  position: relative;
+  width: 14rem;
+  height: 17rem;
+  perspective: 62.5rem;
+  transform-style: preserve-3d; }
+  .book:hover > .book__front {
+    -webkit-transform: rotateY(-145deg) translateZ(0);
+    -moz-transform: rotateY(-145deg) translateZ(0);
+    transform: rotateY(-145deg) translateZ(0);
+    z-index: 0; }
+  .book:hover > .book__pages li:nth-child(1) {
+    -webkit-transform: rotateY(-30deg);
+    -moz-transform: rotateY(-30deg);
+    transform: rotateY(-30deg);
+    -webkit-transition-duration: 1.5s;
+    -moz-transition-duration: 1.5s;
+    transition-duration: 1.5s; }
+  .book:hover > .book__pages li:nth-child(2) {
+    -webkit-transform: rotateY(-35deg);
+    -moz-transform: rotateY(-35deg);
+    transform: rotateY(-35deg);
+    -webkit-transition-duration: 1.8s;
+    -moz-transition-duration: 1.8s;
+    transition-duration: 1.8s; }
+  .book:hover > .book__pages li:nth-child(3) {
+    -webkit-transform: rotateY(-118deg);
+    -moz-transform: rotateY(-118deg);
+    transform: rotateY(-118deg);
+    -webkit-transition-duration: 1.6s;
+    -moz-transition-duration: 1.6s;
+    transition-duration: 1.6s; }
+  .book:hover > .book__pages li:nth-child(4) {
+    -webkit-transform: rotateY(-130deg);
+    -moz-transform: rotateY(-130deg);
+    transform: rotateY(-130deg);
+    -webkit-transition-duration: 1.4s;
+    -moz-transition-duration: 1.4s;
+    transition-duration: 1.4s; }
+  .book:hover > .book__pages li:nth-child(5) {
+    -webkit-transform: rotateY(-140deg);
+    -moz-transform: rotateY(-140deg);
+    transform: rotateY(-140deg);
+    -webkit-transition-duration: 1.2s;
+    -moz-transition-duration: 1.2s;
+    transition-duration: 1.2s; }
+  .book__cover {
+    width: 100%;
+    height: 100%; }
+  .book__front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(-34deg) translateZ(0.6rem);
+    z-index: 100;
+    transform-origin: 0% 100%;
+    transition: all 0.8s ease, z-index 0.6s; }
+    .book__front li {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d; }
+      .book__front li:first-child:before, .book__front li:last-child:before {
+        background-color: #999;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0; }
+      .book__front li:first-child {
+        background-color: #efefef;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        backface-visibility: hidden;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        transform: translateZ(0.125rem); }
+        .book__front li:first-child:before {
+          height: 100%;
+          transform: rotateY(90deg) translateZ(9.87rem) translateX(0.125rem); }
+      .book__front li:last-child {
+        background-color: #fffbec;
+        transform: rotateY(180deg) translateZ(0.125rem); }
+        .book__front li:last-child:before {
+          height: 100%;
+          box-shadow: 0 -1.87rem 1.87rem 1rem rgba(0, 0, 0, 0.4);
+          transform: rotateX(90deg) rotateZ(90deg) translateZ(-8.75rem) translateX(-0.125rem) translateY(-4.8rem); }
+  .book__pages {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    height: 98%;
+    top: 1%;
+    left: 3%;
+    z-index: 10; }
+    .book__pages li {
+      background: linear-gradient(to right, #e1ddd8, #fffbf6);
+      box-shadow: inset 0px -1px 2px rgba(50, 50, 50, 0.1), inset -1px 0px 1px rgba(150, 150, 150, 0.2);
+      border-radius: 0 .4rem .4rem 0;
+      -webkit-transform-origin: left center;
+      -moz-transform-origin: left center;
+      transform-origin: left center;
+      -webkit-transition-property: transform;
+      -moz-transition-property: transform;
+      transition-property: transform;
+      -webkit-transition-timing-function: ease;
+      -moz-transition-timing-function: ease;
+      transition-timing-function: ease;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d; }
+      .book__pages li:nth-child(1) {
+        transform: rotateY(-28deg); }
+      .book__pages li:nth-child(2) {
+        transform: rotateY(-30deg); }
+      .book__pages li:nth-child(3) {
+        transform: rotateY(-32deg); }
+      .book__pages li:nth-child(4) {
+        transform: rotateY(-34deg); }
+      .book__pages li:nth-child(5) {
+        transform: rotateY(-36deg); }
+      .book__pages li:nth-child(1), .book__pages li:nth-child(2), .book__pages li:nth-child(5) {
+        transition-duration: 0.6s; }
+      .book__pages li:nth-child(3) {
+        transition-duration: 0.4s; }
+      .book__pages li:nth-child(4) {
+        transition-duration: 0.5s; }
+  .book__back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(-15deg) translateZ(-0.5rem);
+    transform-origin: 0% 100%; }
+    .book__back li {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d; }
+      .book__back li:first-child, .book__back li:last-child {
+        background-color: #fffbec; }
+        .book__back li:first-child:after, .book__back li:first-child:before, .book__back li:last-child:after, .book__back li:last-child:before {
+          background-color: #999;
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0; }
+      .book__back li:first-child {
+        transform: translateZ(0.125rem); }
+        .book__back li:first-child:after, .book__back li:first-child:before {
+          height: 100%; }
+        .book__back li:first-child:after {
+          transform: rotateY(90deg) translateZ(-0.125rem) translateX(0.125rem); }
+        .book__back li:first-child:before {
+          transform: rotateY(90deg) translateZ(9.875rem) translateX(0.125rem); }
+      .book__back li:last-child {
+        transform: translateZ(-0.125rem); }
+        .book__back li:last-child:after, .book__back li:last-child:before {
+          height: 100%; }
+        .book__back li:last-child:after {
+          transform: rotateX(90deg) rotateZ(90deg) translateZ(5rem) translateX(0.125rem) translateY(-4.78rem); }
+        .book__back li:last-child:before {
+          box-shadow: 10px -1px 5rem 20px #666;
+          transform: rotateX(90deg) rotateZ(90deg) translateZ(-8.75rem) translateX(0.125rem) translateY(-4.875rem); }
+  .book__guard {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(60deg) translateX(-0.4rem) translateZ(-0.8rem);
+    width: 1rem;
+    z-index: 0; }
+    .book__guard li {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d; }
+      .book__guard li:first-child:after, .book__guard li:first-child:before, .book__guard li:last-child:after, .book__guard li:last-child:before {
+        background-color: #999;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px; }
+      .book__guard li:first-child {
+        background-color: #eee;
+        transform: translateZ(0.125rem); }
+        .book__guard li:first-child:after, .book__guard li:first-child:before {
+          height: 100%; }
+        .book__guard li:first-child:after {
+          transform: rotateY(90deg) translateZ(-0.125rem) translateX(0.125rem); }
+        .book__guard li:first-child:before {
+          transform: rotateY(-90deg) translateZ(-0.75rem); }
+      .book__guard li:last-child {
+        background-color: #333;
+        transform: translateZ(-0.125rem); }
+        .book__guard li:last-child:after, .book__guard li:last-child:before {
+          height: 1rem; }
+        .book__guard li:last-child:after {
+          transform: rotateX(90deg) rotateZ(90deg) translateZ(0.5rem) translateX(0.125rem) translateY(-0.45rem); }
+        .book__guard li:last-child:before {
+          box-shadow: 0.31rem -0.01rem 6.25rem 2.5rem rgba(0, 0, 0, 0.2);
+          transform: rotateX(90deg) rotateZ(90deg) translateZ(-13.12rem) translateX(0.125rem) translateY(-0.45rem); }
+
 .centered__block {
   display: block;
   margin: auto; }
@@ -431,8 +683,13 @@ label {
 .no-link {
   text-decoration: none; }
 
+.no__list {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
 @media screen and (max-width: 60rem) {
-  .container__card {
+  .container__card, .container__books {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 48rem) {
@@ -441,11 +698,15 @@ label {
     margin-top: 1rem; }
   .containerMessages {
     height: 40vh;
-    grid-column: 1/4; } }
+    grid-column: 1/4; }
+  .headerUser__content {
+    width: 85%; } }
 
 @media screen and (max-width: 40rem) {
-  .container__card {
-    grid-template-columns: 1fr; } }
+  .container__card, .container__books {
+    grid-template-columns: 1fr; }
+  .headerUser__content {
+    width: 100%; } }
 
 @media screen and (max-width: 30rem) {
   .login__content {

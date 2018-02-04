@@ -183,6 +183,13 @@ label {
   @at-root #{&}--error {
     font-size: 10rem;    
   }
+  @at-root #{&}--medium {
+    text-shadow: none;
+    margin-top: 1.5rem;
+    margin-bottom: .5rem;
+    font-size: 2.5rem;
+    color: $dark-color !important;
+  }
 }
 
 .input__file {
@@ -535,5 +542,19 @@ label {
     color: $white;
     display: flex;
     align-items: center;
+  }
+}
+
+.headerUser {
+  @at-root #{&}__img {
+    width: 10rem;
+    border-radius: .5rem;
+    margin: .5rem 0;
+  }
+  @at-root #{&}__content {
+    width: calc(100% - 20rem);
+    margin: 0 auto;
+    text-align: justify;
+    margin-bottom: 1rem;
   }
 }
