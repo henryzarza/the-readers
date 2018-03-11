@@ -2,7 +2,7 @@
 
 /*
   Styles for the book effect.
-  Adapted from the original https://tympanus.net/codrops/2013/07/11/animated-books-with-css-3d-transforms/
+  Adapted from https://tympanus.net/codrops/2013/07/11/animated-books-with-css-3d-transforms/
 */
 
 @mixin positionsGenerals() {
@@ -39,53 +39,30 @@
   
   &:hover {
     & > .book__front {
-      -webkit-transform: rotateY(-145deg) translateZ(0);
-      -moz-transform: rotateY(-145deg) translateZ(0);
-      transform: rotateY(-145deg) translateZ(0);
+      @include addPrefix(transform, rotateY(-145deg) translateZ(0));
       z-index: 0;
     }
     & > .book__pages li {
       &:nth-child(1) {
-        -webkit-transform: rotateY(-30deg);
-        -moz-transform: rotateY(-30deg);
-        transform: rotateY(-30deg);
-        -webkit-transition-duration: 1.5s;
-        -moz-transition-duration: 1.5s;
-        transition-duration: 1.5s;
+        @include addPrefix(transform, rotateY(-30deg));
+        @include addPrefix(transition-duration, 1.5s);
       }
       &:nth-child(2) {
-        -webkit-transform: rotateY(-35deg);
-        -moz-transform: rotateY(-35deg);
-        transform: rotateY(-35deg);
-        -webkit-transition-duration: 1.8s;
-        -moz-transition-duration: 1.8s;
-        transition-duration: 1.8s;
+        @include addPrefix(transform, rotateY(-35deg));
+        @include addPrefix(transition-duration, 1.8s);
       }
       &:nth-child(3) {
-        -webkit-transform: rotateY(-118deg);
-        -moz-transform: rotateY(-118deg);
-        transform: rotateY(-118deg);
-        -webkit-transition-duration: 1.6s;
-        -moz-transition-duration: 1.6s;
-        transition-duration: 1.6s;
+        @include addPrefix(transform, rotateY(-118deg));
+        @include addPrefix(transition-duration, 1.6s);
       }
       &:nth-child(4) {
-        -webkit-transform: rotateY(-130deg);
-        -moz-transform: rotateY(-130deg);
-        transform: rotateY(-130deg);
-        -webkit-transition-duration: 1.4s;
-        -moz-transition-duration: 1.4s;
-        transition-duration: 1.4s;
+        @include addPrefix(transform, rotateY(-130deg));
+        @include addPrefix(transition-duration, 1.4s);
       }
       &:nth-child(5) {
-        -webkit-transform: rotateY(-140deg);
-        -moz-transform: rotateY(-140deg);
-        transform: rotateY(-140deg);
-        -webkit-transition-duration: 1.2s;
-        -moz-transition-duration: 1.2s;
-        transition-duration: 1.2s;
+        @include addPrefix(transform, rotateY(-140deg));
+        @include addPrefix(transition-duration, 1.2s);
       }
-
     }
   }
 
@@ -106,7 +83,7 @@
       @include positionsGenerals();
       &:first-child, &:last-child {
         &:before {
-          background-color: #999;
+          background-color: $gray-guard;
           content: '';
           position: absolute;
           top: 0;
@@ -121,20 +98,24 @@
         @include addPrefix(user-select, none);
         transform: translateZ(.125rem);
 
-        &:before {
+        &:after, &:before {
+          width: .25rem;
           height: 100%;
-          transform: rotateY(90deg) translateZ(9.87rem) translateX(.125rem);
         }
+
+        &:after { transform: rotateY(90deg) translateZ(9.875rem) translateX(.125rem); }
+
+        &:before { transform: rotateY(90deg) translateZ(13.87rem) translateX(0.125rem); }
       }
 
       &:last-child {
-        background-color: #fffbec;
+        background-color: $front-reverse;
         transform: rotateY(180deg) translateZ(.125rem);
 
         &:before {
-          height: 100%;
-          box-shadow: 0 -1.87rem 1.87rem 1rem rgba(0, 0, 0, .4);
-          transform: rotateX(90deg) rotateZ(90deg) translateZ(-8.75rem) translateX(-.125rem) translateY(-4.8rem);
+          height: 80%;
+          box-shadow: 0 -1.87rem 1.87rem 0.8rem rgba(0, 0, 0, 0.4);
+          transform: rotateX(90deg) rotateZ(90deg) translateZ(-10.2rem) translateX(-1.125rem) translateY(-4.5rem);
         }
       }
     }
@@ -148,7 +129,7 @@
     z-index: 10;
 
     li {
-      background: linear-gradient(to right, #e1ddd8 , #fffbf6);      
+      background: linear-gradient(to right, $page-init , $page-end);      
       box-shadow: inset 0px -1px 2px rgba(50, 50, 50, 0.1), inset -1px 0px 1px rgba(150, 150, 150, 0.2);
       border-radius: 0 .4rem .4rem 0;
       @include addPrefix(transform-origin, left center);
@@ -163,6 +144,9 @@
       &:nth-child(1), &:nth-child(2), &:nth-child(5) { transition-duration: 0.6s; }
       &:nth-child(3) { transition-duration: 0.4s; }
       &:nth-child(4) { transition-duration: 0.5s; }
+
+      &:nth-child(2) { overflow-y: auto; }
+
     }
   }
 
@@ -175,9 +159,9 @@
       @include positionsGenerals();
 
       &:first-child, &:last-child {
-        background-color: #fffbec;
+        background-color: $front-reverse;
         &:after, &:before {
-          background-color: #999;
+          background-color: $gray-guard;
           content: '';
           position: absolute;
           top: 0;
@@ -189,27 +173,25 @@
         transform: translateZ(.125rem);
   
         &:after, &:before {
+          width: .35rem;
           height: 100%;
         }
-        &:after {
-          transform: rotateY(90deg) translateZ(-.125rem) translateX(.125rem);      
-        }
-        &:before {
-          transform: rotateY(90deg) translateZ(9.875rem) translateX(.125rem);
-        }
+
+        &:after { transform: rotateY(90deg) translateZ(-0.125rem) translateX(-0.125rem); }
+
+        &:before { transform: rotateY(90deg) translateZ(13.875rem) translateX(0.125rem); }
       }
       &:last-child {
         transform: translateZ(-.125rem);
         
-        &:after, &:before {
-          height: 100%;
-        }
         &:after {
+          height: 100%;
           transform: rotateX(90deg) rotateZ(90deg) translateZ(5rem) translateX(.125rem) translateY(-4.78rem);
         }
         &:before {
-          box-shadow: 10px -1px 5rem 20px #666;
-          transform: rotateX(90deg) rotateZ(90deg) translateZ(-8.75rem) translateX(.125rem) translateY(-4.875rem);
+          box-shadow: 0.65rem -0.05rem 5rem 1.2rem #666;
+          transform: rotateX(90deg) rotateZ(110deg) translateZ(-10.5rem) translateX(-1.875rem) translateY(-5.875rem);
+          height: 80%;
         }
       }
     }
@@ -217,8 +199,8 @@
 
   @at-root #{&}__guard {
     @include positionsGenerals();
-    transform: rotateY(60deg) translateX(-.4rem) translateZ(-.8rem);
-    width: 1rem;
+    transform: rotateY(60deg) translateX(-0.3rem) translateZ(-0.8rem);
+    width: 2rem;
     z-index: 0;
  
     li {
@@ -226,7 +208,7 @@
 
       &:first-child, &:last-child {
         &:after, &:before {
-          background-color: #999;
+          background-color: $gray-guard;
           content: '';
           position: absolute;
           top: 0;
@@ -235,30 +217,26 @@
         }
       }
       &:first-child {
-        background-color: #eee;
+        background-color: $white;
         transform: translateZ(.125rem);
-        &:after, &:before {
-          height: 100%;
-        }
-        &:after {
-          transform: rotateY(90deg) translateZ(-.125rem) translateX(.125rem);      
-        }
-        &:before {
-          transform: rotateY(-90deg) translateZ(-.75rem);
-        }
+
+        &:after, &:before { height: 100%; }
+
+        &:after { transform: rotateY(90deg) translateZ(-.125rem) translateX(.125rem); }
+
+        &:before { transform: rotateY(-90deg) translateZ(-.75rem); }
       }
       &:last-child {
-        background-color: #333;
+        background-color: $black;
         transform: translateZ(-.125rem);
-        &:after, &:before {
-          height: 1rem;
-        }
-        &:after {
-          transform: rotateX(90deg) rotateZ(90deg) translateZ(.5rem) translateX(.125rem) translateY(-.45rem);
-        }
+
+        &:after, &:before { height: 1rem; }
+
+        &:after { transform: rotateX(90deg) rotateZ(90deg) translateZ(-16.5rem) translateX(0.125rem) translateY(-0.45rem); }
+
         &:before {
           box-shadow: .31rem -.01rem 6.25rem 2.5rem rgba(0, 0, 0, 0.2);
-          transform: rotateX(90deg) rotateZ(90deg) translateZ(-13.12rem) translateX(.125rem) translateY(-.45rem);
+          transform: rotateX(90deg) rotateZ(90deg) translateZ(-16.8rem) translateX(0.125rem) translateY(-0.45rem);
         }
       }
     }

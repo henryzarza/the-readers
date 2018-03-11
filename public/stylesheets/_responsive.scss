@@ -3,14 +3,19 @@
 }
 
 @media screen and (max-width: 48rem) {
+
+  .container__books { grid-template-columns: 1fr; }
+
   .containerChat {
     grid-column: 1/4;
     margin-top: 1rem;
   }
+
   .containerMessages {
     height: 40vh;
     grid-column: 1/4;
   }
+
   .headerUser__content { width: 85%; }
 }
 

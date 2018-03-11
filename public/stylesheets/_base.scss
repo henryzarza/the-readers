@@ -370,7 +370,7 @@ label {
     display: block;
     margin: 0 auto;
     transform: scale(1) rotate(0);
-    transition: transform .3s linear;
+    transition: transform .3s linear, box-shadow .2s linear;
 
     &:hover {
       cursor: pointer;
